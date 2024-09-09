@@ -819,6 +819,41 @@ export interface ApiAboutAbout extends Schema.SingleType {
   };
 }
 
+export interface ApiBannerBanner extends Schema.CollectionType {
+  collectionName: 'banners';
+  info: {
+    singularName: 'banner';
+    pluralName: 'banners';
+    displayName: 'banner';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    offer: Attribute.String & Attribute.Required & Attribute.DefaultTo<'0'>;
+    title: Attribute.Text & Attribute.Required;
+    smallDiscription: Attribute.Text & Attribute.Required;
+    pricefrom: Attribute.Integer & Attribute.Required & Attribute.DefaultTo<0>;
+    bannerimg: Attribute.Media<'images'> & Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::banner.banner',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::banner.banner',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiOrderOrder extends Schema.CollectionType {
   collectionName: 'orders';
   info: {
@@ -947,6 +982,7 @@ declare module '@strapi/types' {
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'api::about.about': ApiAboutAbout;
+      'api::banner.banner': ApiBannerBanner;
       'api::order.order': ApiOrderOrder;
       'api::product.product': ApiProductProduct;
     }

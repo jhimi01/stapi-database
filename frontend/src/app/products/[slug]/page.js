@@ -1,7 +1,11 @@
+// "use client"
+// import { useCart } from "@/components/context/CartProvider";
 import Image from "next/image";
 import { FaShoppingCart } from "react-icons/fa";
 
 export default async function Product({ params }) {
+  // const {addToCart} = useCart()
+
   let headers = {
     Authorization:
       "Bearer e1ba405f90fe3097db8d29d7d3a0dc61798183cb76b469f33ce8b90f22e342d5a3a17135db2c0fe7299d0573eb315069e71675ca26c4dff3e9fe64e136c079632d3a7ce5da527baaad9e25562e7b831e24199728292171c639c7a224b86d6ee6e818d95ff3abda64f1b222a40a8a3b53c25e7a6f8f1917c8fce302be2b42c1ae",
@@ -142,13 +146,13 @@ export default async function Product({ params }) {
                 </a>
               </span>
             </div>
-            <p className="leading-relaxed">
-             {attributes.discription}
-            </p>
+            <p className="leading-relaxed">{attributes.discription}</p>
             <div className="flex mt-6 items-center pb-5 border-b-2 border-gray-100 mb-5">
               <div className="flex">
                 <span className="mr-2">Color</span>
-                <button className={`border-2 border-gray-300 rounded-full w-6 h-6 focus:outline-none bg-[${attributes.color}]`}></button>
+                <button
+                  className={`border-2 border-gray-300 rounded-full w-6 h-6 focus:outline-none bg-[${attributes.color}]`}
+                ></button>
               </div>
               <div className="flex ml-6 items-center">
                 <span className="mr-3 text-xl">Size: {attributes.size}</span>
@@ -184,7 +188,7 @@ export default async function Product({ params }) {
                 checkout
               </button>
               <button className="flex items-center gap-2 text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded">
-                add to cart <FaShoppingCart />
+                Add to Cart <FaShoppingCart />
               </button>
               <button className="rounded-full w-10 h-10 bg-gray-200 p-0 border-0 inline-flex items-center justify-center text-gray-500 ml-4">
                 <svg

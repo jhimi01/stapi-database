@@ -1,0 +1,42 @@
+{
+  "kind": "collectionType",
+  "collectionName": "banners",
+  "info": {
+    "singularName": "banner",
+    "pluralName": "banners",
+    "displayName": "banner",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "offer": {
+      "type": "string",
+      "default": "0",
+      "required": true
+    },
+    "title": {
+      "type": "text",
+      "required": true
+    },
+    "smallDiscription": {
+      "type": "text",
+      "required": true
+    },
+    "pricefrom": {
+      "type": "integer",
+      "required": true,
+      "default": 0
+    },
+    "bannerimg": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    }
+  }
+}
