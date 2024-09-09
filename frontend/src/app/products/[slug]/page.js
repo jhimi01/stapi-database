@@ -6,12 +6,25 @@ export default async function Product({ params }) {
     Authorization:
       "Bearer e1ba405f90fe3097db8d29d7d3a0dc61798183cb76b469f33ce8b90f22e342d5a3a17135db2c0fe7299d0573eb315069e71675ca26c4dff3e9fe64e136c079632d3a7ce5da527baaad9e25562e7b831e24199728292171c639c7a224b86d6ee6e818d95ff3abda64f1b222a40a8a3b53c25e7a6f8f1917c8fce302be2b42c1ae",
   };
-  let data = await fetch(`http://localhost:1337/api/products/${params.id}`, {
-    headers: headers,
-    cache: "no-store",
-  });
+
+  let data = await fetch(
+    `http://localhost:1337/api/products?filters[slug]=${params.slug}`,
+    {
+      headers: headers,
+      cache: "no-store",
+    }
+  );
+
   let product = await data.json();
-    console.log("single product", product);
+
+  // Check if product data exists
+  if (!product.data || product.data.length === 0) {
+    return (
+      <h2 className="text-2xl font-bold text-center">Product not found.</h2>
+    );
+  }
+
+  const { attributes } = product.data[0];
 
   return (
     <section className="text-gray-600 body-font overflow-hidden">
@@ -26,10 +39,10 @@ export default async function Product({ params }) {
           />
           <div className="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0">
             <h2 className="text-sm title-font text-gray-500 tracking-widest">
-              {product.data.attributes.category}
+              {attributes.category}
             </h2>
             <h1 className="text-gray-900 text-3xl title-font font-medium mb-1">
-            {product.data.attributes.title}
+              {attributes.title}
             </h1>
             <div className="flex mb-4">
               <span className="flex items-center">
@@ -130,23 +143,17 @@ export default async function Product({ params }) {
               </span>
             </div>
             <p className="leading-relaxed">
-              Fam locavore kickstarter distillery. Mixtape chillwave tumeric
-              sriracha taximy chia microdosing tilde DIY. XOXO fam indxgo
-              juiceramps cornhole raw denim forage brooklyn. Everyday carry +1
-              seitan poutine tumeric. Gastropub blue bottle austin listicle
-              pour-over, neutra jean shorts keytar banjo tattooed umami
-              cardigan.
+             {attributes.discription}
             </p>
             <div className="flex mt-6 items-center pb-5 border-b-2 border-gray-100 mb-5">
               <div className="flex">
-                <span className="mr-3">Color</span>
-                <button className="border-2 border-gray-300 rounded-full w-6 h-6 focus:outline-none"></button>
-                <button className="border-2 border-gray-300 ml-1 bg-gray-700 rounded-full w-6 h-6 focus:outline-none"></button>
-                <button className="border-2 border-gray-300 ml-1 bg-indigo-500 rounded-full w-6 h-6 focus:outline-none"></button>
+                <span className="mr-2">Color</span>
+                <button className={`border-2 border-gray-300 rounded-full w-6 h-6 focus:outline-none bg-[${attributes.color}]`}></button>
               </div>
               <div className="flex ml-6 items-center">
-                <span className="mr-3">Size</span>
-                <div className="relative">
+                <span className="mr-3 text-xl">Size: {attributes.size}</span>
+
+                {/* <div className="relative">
                   <select className="rounded border appearance-none border-gray-300 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-200 focus:border-indigo-500 text-base pl-3 pr-10">
                     <option>SM</option>
                     <option>M</option>
@@ -166,18 +173,18 @@ export default async function Product({ params }) {
                       <path d="M6 9l6 6 6-6"></path>
                     </svg>
                   </span>
-                </div>
+                </div> */}
               </div>
             </div>
             <div className="flex justify-between">
               <span className="title-font font-medium text-2xl text-gray-900">
-                $58.00
+                ${attributes.price}
               </span>
               <button className=" text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded">
-                buy now
+                checkout
               </button>
               <button className="flex items-center gap-2 text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded">
-                add cart <FaShoppingCart />
+                add to cart <FaShoppingCart />
               </button>
               <button className="rounded-full w-10 h-10 bg-gray-200 p-0 border-0 inline-flex items-center justify-center text-gray-500 ml-4">
                 <svg

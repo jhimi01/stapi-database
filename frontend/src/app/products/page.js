@@ -12,6 +12,10 @@ export default async function Products() {
     cache: "no-store",
   });
   let products = await data.json();
+   // Check if product data exists
+   if (!products.data || products.data.length === 0) {
+    return <h2 className="text-3xl mt-14 font-bold text-center text-gray-700">Product not found.</h2>;
+  }
   // console.log("products", products.data.length, products);
 
   return (
@@ -56,7 +60,7 @@ export default async function Products() {
                   <p className="leading-relaxed text-base">
                     {item.attributes.discription || "No description available."}
                   </p>
-                  <Link href={`products/${item.id}`}>
+                  <Link href={`products/${item.attributes.slug}`}>
                     <button
                       className={`ml-auto text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded mt-2`}
                     >
