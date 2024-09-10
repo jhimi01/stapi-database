@@ -1,94 +1,156 @@
 import Image from "next/image";
 import Link from "next/link";
-import Productitem from "./productitem";
+import Productitem from "./Productitem";
 
 export default function PopularProducts() {
   const popularProducts = [
     {
-      id: "66df0156d9c220020e25a2a6",
-      imageUrl: "/imgCategory/dress.jpg",
-      productLink: "/product/66df0156d9c220020e25a2a6",
-      title: "Siril Georgette Pink Color Saree with Blouse Piece",
-      stockStatus: "In Stock",
-      discount: 12, // Discount in percentage
-      rating: 5, // Assuming it's a 5-star rating
-      oldPrice: 650, // Old price in Rs
-      newPrice: 550, // New price in Rs
-      actions: [
+      "categories": [
         {
-          type: "addToCart",
-          icon: "cartIcon", // You can replace this with the actual icon if needed
+          "name": "electronics",
+          "products": [
+            {
+              "title": "Smartphone",
+              "imageUrl": "/electronics/smartphone.jpg",
+              "productLink": "/product/smartphone",
+              "discount": 10,
+              "oldPrice": 15000,
+              "newPrice": 13500,
+              "stockStatus": "In Stock"
+            },
+            {
+              "title": "Laptop",
+              "imageUrl": "/electronics/laptop.jpg",
+              "productLink": "/product/laptop",
+              "discount": 15,
+              "oldPrice": 60000,
+              "newPrice": 51000,
+              "stockStatus": "In Stock"
+            }
+          ]
         },
         {
-          type: "addToWishlist",
-          icon: "wishlistIcon", // You can replace this with the actual icon if needed
-        },
-      ],
-    },
-    {
-      id: "66df0156d9c220020e25a2a6",
-      imageUrl: "/imgCategory/dress.jpg",
-      productLink: "/product/66df0156d9c220020e25a2a6",
-      title: "Siril Georgette Pink Color Saree with Blouse Piece",
-      stockStatus: "In Stock",
-      discount: 12, // Discount in percentage
-      rating: 5, // Assuming it's a 5-star rating
-      oldPrice: 650, // Old price in Rs
-      newPrice: 550, // New price in Rs
-      actions: [
-        {
-          type: "addToCart",
-          icon: "cartIcon", // You can replace this with the actual icon if needed
-        },
-        {
-          type: "addToWishlist",
-          icon: "wishlistIcon", // You can replace this with the actual icon if needed
-        },
-      ],
-    },
-    {
-      id: "66df0156d9c220020e25a2a6",
-      imageUrl: "/imgCategory/dress.jpg",
-      productLink: "/product/66df0156d9c220020e25a2a6",
-      title: "Siril Georgette Pink Color Saree with Blouse Piece",
-      stockStatus: "In Stock",
-      discount: 12, // Discount in percentage
-      rating: 5, // Assuming it's a 5-star rating
-      oldPrice: 650, // Old price in Rs
-      newPrice: 550, // New price in Rs
-      actions: [
-        {
-          type: "addToCart",
-          icon: "cartIcon", // You can replace this with the actual icon if needed
+          "name": "dress",
+          "products": [
+            {
+              "title": "Summer Dress",
+              "imageUrl": "/fashion/dress.jpg",
+              "productLink": "/product/summer-dress",
+              "discount": 20,
+              "oldPrice": 1200,
+              "newPrice": 960,
+              "stockStatus": "In Stock"
+            },
+            {
+              "title": "Evening Gown",
+              "imageUrl": "/fashion/Gown.jpg",
+              "productLink": "/product/evening-gown",
+              "discount": 25,
+              "oldPrice": 5000,
+              "newPrice": 3750,
+              "stockStatus": "Out of Stock"
+            }
+          ]
         },
         {
-          type: "addToWishlist",
-          icon: "wishlistIcon", // You can replace this with the actual icon if needed
+          "name": "footwear",
+          "products": [
+            {
+              "title": "Running Shoes",
+              "imageUrl": "/footwear/Shoes.jpg",
+              "productLink": "/product/running-shoes",
+              "discount": 12,
+              "oldPrice": 2500,
+              "newPrice": 2200,
+              "stockStatus": "In Stock"
+            },
+            {
+              "title": "Sandals",
+              "imageUrl": "/footwear/Sandals.jpg",
+              "productLink": "/product/sandals",
+              "discount": 18,
+              "oldPrice": 800,
+              "newPrice": 656,
+              "stockStatus": "In Stock"
+            }
+          ]
         },
-      ],
-    },
-    {
-      id: "66df0156d9c220020e25a2a6",
-      imageUrl: "/imgCategory/dress.jpg",
-      productLink: "/product/66df0156d9c220020e25a2a6",
-      title: "Siril Georgette Pink Color Saree with Blouse Piece",
-      stockStatus: "In Stock",
-      discount: 12, // Discount in percentage
-      rating: 5, // Assuming it's a 5-star rating
-      oldPrice: 650, // Old price in Rs
-      newPrice: 550, // New price in Rs
-      actions: [
         {
-          type: "addToCart",
-          icon: "cartIcon", // You can replace this with the actual icon if needed
+          "name": "health",
+          "products": [
+            {
+              "title": "Vitamin C Supplements",
+              "imageUrl": "/health/VitaminC.jpg",
+              "productLink": "/product/vitamin-c",
+              "discount": 5,
+              "oldPrice": 500,
+              "newPrice": 475,
+              "stockStatus": "In Stock"
+            },
+            {
+              "title": "Protein Powder",
+              "imageUrl": "/health/Supplements.jpg",
+              "productLink": "/product/protein-powder",
+              "discount": 10,
+              "oldPrice": 3000,
+              "newPrice": 2700,
+              "stockStatus": "Out of Stock"
+            }
+          ]
         },
         {
-          type: "addToWishlist",
-          icon: "wishlistIcon", // You can replace this with the actual icon if needed
+          "name": "beauty",
+          "products": [
+            {
+              "title": "Face Cream",
+              "imageUrl": "/images/beauty/face-cream.jpg",
+              "productLink": "/product/face-cream",
+              "discount": 8,
+              "oldPrice": 1200,
+              "newPrice": 1100,
+              "stockStatus": "In Stock"
+            },
+            {
+              "title": "Lipstick",
+              "imageUrl": "/images/beauty/lipstick.jpg",
+              "productLink": "/product/lipstick",
+              "discount": 20,
+              "oldPrice": 500,
+              "newPrice": 400,
+              "stockStatus": "In Stock"
+            }
+          ]
         },
-      ],
-    },
+        {
+          "name": "grocery",
+          "products": [
+            {
+              "title": "Organic Rice",
+              "imageUrl": "/images/grocery/organic-rice.jpg",
+              "productLink": "/product/organic-rice",
+              "discount": 5,
+              "oldPrice": 2000,
+              "newPrice": 1900,
+              "stockStatus": "In Stock"
+            },
+            {
+              "title": "Olive Oil",
+              "imageUrl": "/images/grocery/olive-oil.jpg",
+              "productLink": "/product/olive-oil",
+              "discount": 15,
+              "oldPrice": 800,
+              "newPrice": 680,
+              "stockStatus": "In Stock"
+            }
+          ]
+        }
+      ]
+    }
+    
   ];
+
+  // Extract categories from the first item in popularProducts array
+  const { categories } = popularProducts[0];
 
   return (
     <div className="my-10">
@@ -110,21 +172,22 @@ export default function PopularProducts() {
           />
         </div>
         <div className="w-[75%] ">
+          <div className="mb-9 text-gray-700">
+            <h2 className="text-[40px]">Popular Products</h2>
+            <p className="text-lg">
+              Do not miss the current offers until the end of March.
+            </p>
+          </div>
           <div className="grid grid-cols-4 space-y-3 gap-3">
-            {popularProducts.map((product, index) => (
-              <Productitem key={index} product={product} />
-            ))}
-            {popularProducts.map((product, index) => (
-              <Productitem key={index} product={product} />
-            ))}
-            {popularProducts.map((product, index) => (
-              <Productitem key={index} product={product} />
-            ))}
-            {popularProducts.map((product, index) => (
-              <Productitem key={index} product={product} />
-            ))}
-            {popularProducts.map((product, index) => (
-              <Productitem key={index} product={product} />
+            {categories.map((category) => (
+              <div key={category.name}>
+                <h2>{category.name}</h2>
+                <div className="products-grid">
+                  {category.products.map((product) => (
+                    <Productitem key={product.title} product={product} />
+                  ))}
+                </div>
+              </div>
             ))}
           </div>
         </div>
