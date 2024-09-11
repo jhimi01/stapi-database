@@ -5,148 +5,147 @@ import Productitem from "./Productitem";
 export default function PopularProducts() {
   const popularProducts = [
     {
-      "categories": [
+      categories: [
         {
-          "name": "electronics",
-          "products": [
+          name: "electronics",
+          products: [
             {
-              "title": "Smartphone",
-              "imageUrl": "/electronics/smartphone.jpg",
-              "productLink": "/product/smartphone",
-              "discount": 10,
-              "oldPrice": 15000,
-              "newPrice": 13500,
-              "stockStatus": "In Stock"
+              title: "Smartphone",
+              imageUrl: "/electronics/smartphone.jpg",
+              productLink: "/product/smartphone",
+              discount: 10,
+              oldPrice: 15000,
+              newPrice: 13500,
+              stockStatus: "In Stock",
             },
             {
-              "title": "Laptop",
-              "imageUrl": "/electronics/laptop.jpg",
-              "productLink": "/product/laptop",
-              "discount": 15,
-              "oldPrice": 60000,
-              "newPrice": 51000,
-              "stockStatus": "In Stock"
-            }
-          ]
+              title: "Laptop",
+              imageUrl: "/electronics/laptop.jpg",
+              productLink: "/product/laptop",
+              discount: 15,
+              oldPrice: 60000,
+              newPrice: 51000,
+              stockStatus: "In Stock",
+            },
+          ],
         },
         {
-          "name": "dress",
-          "products": [
+          name: "dress",
+          products: [
             {
-              "title": "Summer Dress",
-              "imageUrl": "/fashion/dress.jpg",
-              "productLink": "/product/summer-dress",
-              "discount": 20,
-              "oldPrice": 1200,
-              "newPrice": 960,
-              "stockStatus": "In Stock"
+              title: "Summer Dress",
+              imageUrl: "/fashion/dress.jpg",
+              productLink: "/product/summer-dress",
+              discount: 20,
+              oldPrice: 1200,
+              newPrice: 960,
+              stockStatus: "In Stock",
             },
             {
-              "title": "Evening Gown",
-              "imageUrl": "/fashion/Gown.jpg",
-              "productLink": "/product/evening-gown",
-              "discount": 25,
-              "oldPrice": 5000,
-              "newPrice": 3750,
-              "stockStatus": "Out of Stock"
-            }
-          ]
+              title: "Evening Gown",
+              imageUrl: "/fashion/Gown.jpg",
+              productLink: "/product/evening-gown",
+              discount: 25,
+              oldPrice: 5000,
+              newPrice: 3750,
+              stockStatus: "Out of Stock",
+            },
+          ],
         },
         {
-          "name": "footwear",
-          "products": [
+          name: "footwear",
+          products: [
             {
-              "title": "Running Shoes",
-              "imageUrl": "/footwear/Shoes.jpg",
-              "productLink": "/product/running-shoes",
-              "discount": 12,
-              "oldPrice": 2500,
-              "newPrice": 2200,
-              "stockStatus": "In Stock"
+              title: "Running Shoes",
+              imageUrl: "/footwear/Shoes.jpg",
+              productLink: "/product/running-shoes",
+              discount: 12,
+              oldPrice: 2500,
+              newPrice: 2200,
+              stockStatus: "In Stock",
             },
             {
-              "title": "Sandals",
-              "imageUrl": "/footwear/Sandals.jpg",
-              "productLink": "/product/sandals",
-              "discount": 18,
-              "oldPrice": 800,
-              "newPrice": 656,
-              "stockStatus": "In Stock"
-            }
-          ]
+              title: "Sandals",
+              imageUrl: "/footwear/Sandals.jpg",
+              productLink: "/product/sandals",
+              discount: 18,
+              oldPrice: 800,
+              newPrice: 656,
+              stockStatus: "In Stock",
+            },
+          ],
         },
         {
-          "name": "health",
-          "products": [
+          name: "health",
+          products: [
             {
-              "title": "Vitamin C Supplements",
-              "imageUrl": "/health/VitaminC.jpg",
-              "productLink": "/product/vitamin-c",
-              "discount": 5,
-              "oldPrice": 500,
-              "newPrice": 475,
-              "stockStatus": "In Stock"
+              title: "Vitamin C Supplements",
+              imageUrl: "/health/VitaminC.jpg",
+              productLink: "/product/vitamin-c",
+              discount: 5,
+              oldPrice: 500,
+              newPrice: 475,
+              stockStatus: "In Stock",
             },
             {
-              "title": "Protein Powder",
-              "imageUrl": "/health/Supplements.jpg",
-              "productLink": "/product/protein-powder",
-              "discount": 10,
-              "oldPrice": 3000,
-              "newPrice": 2700,
-              "stockStatus": "Out of Stock"
-            }
-          ]
+              title: "Protein Powder",
+              imageUrl: "/health/protine.jpg",
+              productLink: "/product/protein-powder",
+              discount: 10,
+              oldPrice: 3000,
+              newPrice: 2700,
+              stockStatus: "Out of Stock",
+            },
+          ],
         },
         {
-          "name": "beauty",
-          "products": [
+          name: "beauty",
+          products: [
             {
-              "title": "Face Cream",
-              "imageUrl": "/images/beauty/face-cream.jpg",
-              "productLink": "/product/face-cream",
-              "discount": 8,
-              "oldPrice": 1200,
-              "newPrice": 1100,
-              "stockStatus": "In Stock"
+              title: "Face Cream",
+              imageUrl: "/beauty/facecream.jpg",
+              productLink: "/product/face-cream",
+              discount: 8,
+              oldPrice: 1200,
+              newPrice: 1100,
+              stockStatus: "In Stock",
             },
             {
-              "title": "Lipstick",
-              "imageUrl": "/images/beauty/lipstick.jpg",
-              "productLink": "/product/lipstick",
-              "discount": 20,
-              "oldPrice": 500,
-              "newPrice": 400,
-              "stockStatus": "In Stock"
-            }
-          ]
+              title: "Lipstick",
+              imageUrl: "/beauty/lipstick.avif",
+              productLink: "/product/lipstick",
+              discount: 20,
+              oldPrice: 500,
+              newPrice: 400,
+              stockStatus: "In Stock",
+            },
+          ],
         },
         {
-          "name": "grocery",
-          "products": [
+          name: "grocery",
+          products: [
             {
-              "title": "Organic Rice",
-              "imageUrl": "/images/grocery/organic-rice.jpg",
-              "productLink": "/product/organic-rice",
-              "discount": 5,
-              "oldPrice": 2000,
-              "newPrice": 1900,
-              "stockStatus": "In Stock"
+              title: "Organic Rice",
+              imageUrl: "/grocery/oil.jpg",
+              productLink: "/product/organic-rice",
+              discount: 5,
+              oldPrice: 2000,
+              newPrice: 1900,
+              stockStatus: "In Stock",
             },
             {
-              "title": "Olive Oil",
-              "imageUrl": "/images/grocery/olive-oil.jpg",
-              "productLink": "/product/olive-oil",
-              "discount": 15,
-              "oldPrice": 800,
-              "newPrice": 680,
-              "stockStatus": "In Stock"
-            }
-          ]
-        }
-      ]
-    }
-    
+              title: "Olive Oil",
+              imageUrl: "/grocery/Oliveoil.jpg",
+              productLink: "/product/olive-oil",
+              discount: 15,
+              oldPrice: 800,
+              newPrice: 680,
+              stockStatus: "In Stock",
+            },
+          ],
+        },
+      ],
+    },
   ];
 
   // Extract categories from the first item in popularProducts array
